@@ -8,9 +8,9 @@
   <style>
     /* ── CSS Variables ────────────────────────────────────────────────── */
     :root {
-      --brand-primary:   #171717;
-      --brand-accent:    #C5C5C5;
-      --metric-color:    #171717;
+      --brand-primary:   #50AF95;
+      --brand-accent:    #1A1A2E;
+      --metric-color:    #1A1A2E;
       --text-primary:    #171717;
       --text-secondary:  #404040;
       --text-meta:       #606060;
@@ -74,8 +74,18 @@
         width: 100%;
       }
       .page { margin: 0; page-break-after: avoid; }
-      /* Links print as black — clean and professional */
-      a { text-decoration: none; color: #000; }
+      /* BUG-F FIX: preserve link colour + underline so recruiters can click */
+      a {
+        text-decoration: underline;
+        color: inherit;          /* keeps brand-primary on contact links */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      /* Contact header links stay branded */
+      .header .contact a {
+        color: var(--brand-primary);
+        text-decoration: underline;
+      }
     }
 
     /* ── Header ───────────────────────────────────────────────────────── */
@@ -271,7 +281,7 @@
       <h1>Satvik Jain</h1>
       <div class="role">Product Manager</div>
       <div class="contact">
-        <a href="tel:+917678296693">+917678296693</a> | <a href="mailto:satvik.jain@iitdalumni.com">satvik.jain@iitdalumni.com</a> | <a href="https://www.linkedin.com/in/satvik-jain-iitd" target="_blank">LinkedIn</a>
+        <a href="tel:+917678296693">+917678296693</a> | <a href="mailto:satvik.jain@iitdalumni.com">satvik.jain@iitdalumni.com</a> | <a href="https://www.linkedin.com/in/satvik-jain-iitd" target="_blank">LinkedIn</a> | <a href="https://satvik-jain-iitd.github.io" target="_blank">Portfolio</a>
       </div>
     </header>
 
