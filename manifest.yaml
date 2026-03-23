@@ -1,0 +1,27 @@
+resumes:
+- company: Tether
+  role: Technical Product Manager
+  slug: tether-tpm
+  file: tether-tpm.html
+  url: https://satvik-jain-iitd.github.io/tether-tpm.html
+  pdf: tether-tpm.pdf
+  date_generated: '2026-03-22'
+  date_sent: '2026-03-23'
+  kali_score: 8.5
+  status: sent
+  recruiter_name: ''
+  recruiter_email: ''
+  notes: First pipeline run. Regression baseline.
+- company: Tether
+  role: Technical Product Manager
+  slug: Tether-Technical Product Manager-20260322
+  file: Tether-Technical Product Manager-20260322.html
+  url: https://satvik-jain-iitd.github.io/Tether-Technical Product Manager-20260322.html
+  pdf: Tether-Technical Product Manager-20260322.pdf
+  date_generated: '2026-03-23'
+  date_sent: null
+  kali_score: null
+  status: draft
+  recruiter_name: ''
+  recruiter_email: ''
+  notes: ''
