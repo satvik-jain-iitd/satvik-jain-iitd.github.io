@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Me Deck — Satvik Jain</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <style>
+        :root {
+            --brand-primary: #3483FA;
+            --brand-accent: #FF7F00;
+            --bg-slide: #0F0F0F;
+            --text-main: #F5F5F5;
+            --text-dim: #A0A0A0;
+            --metric-color: #3483FA; /* Default primary if no metric_color */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+        }
+
+        .reveal {
+            background-color: var(--bg-slide);
+        }
+
+        .reveal .slides section {
+            text-align: left;
+            padding: 40px;
+        }
+
+        /* Title Slide */
+        .title-slide {
+            background-color: var(--brand-primary);
+            color: white !important;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center !important;
+        }
+
+        .title-slide h1 {
+            font-size: 64pt !important;
+            font-weight: 700 !important;
+            margin-bottom: 20px !important;
+        }
+
+        .title-slide h2 {
+            font-size: 28pt !important;
+            font-weight: 300 !important;
+            opacity: 0.8 !important;
+        }
+
+        /* Slide Headers */
+        h3 {
+            color: var(--brand-primary);
+            font-size: 32pt !important;
+            font-weight: 700 !important;
+            margin-bottom: 40px !important;
+            border-left: 8px solid var(--brand-accent);
+            padding-left: 20px !important;
+        }
+
+        /* Anchor Slide */
+        .anchor-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .anchor-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 24pt;
+        }
+
+        .anchor-icon {
+            color: var(--brand-accent);
+            margin-right: 20px;
+            font-weight: 700;
+        }
+
+        .anchor-proof {
+            font-size: 20pt;
+            color: var(--text-dim);
+            margin-top: 10px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+
+        /* Mirror Table */
+        .mirror-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 20pt;
+        }
+
+        .mirror-table th {
+            text-align: left;
+            padding: 15px;
+            background: var(--brand-accent);
+            color: white;
+            font-weight: 700;
+        }
+
+        .mirror-table td {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .mirror-table td:first-child {
+            width: 40%;
+            color: var(--brand-accent);
+            font-weight: 500;
+        }
+
+        /* Proof Cards */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .proof-card {
+            background: #1A1A1A;
+            padding: 40px;
+            border-left: 8px solid var(--brand-primary);
+            border-radius: 8px;
+        }
+
+        .proof-metric {
+            font-size: 64pt;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-bottom: 20px;
+        }
+
+        .proof-context {
+            font-size: 20pt;
+            color: var(--text-dim);
+        }
+
+        /* Forward Plan Timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #333;
+            z-index: 0;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 66%;
+            height: 4px;
+            background: var(--brand-primary);
+            z-index: 1;
+        }
+
+        .timeline-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 30%;
+        }
+
+        .step-bubble {
+            width: 100px;
+            height: 100px;
+            background: var(--bg-slide);
+            border: 4px solid var(--brand-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            font-size: 24pt;
+        }
+
+        .step-label {
+            font-size: 20pt;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .step-action {
+            font-size: 16pt;
+            color: var(--text-dim);
+        }
+
+        /* CTA Slide */
+        .cta-content {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-name {
+            font-size: 48pt;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-bottom: 20px;
+        }
+
+        .cta-contact {
+            font-size: 20pt;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+        }
+
+        .cta-portfolio {
+            font-size: 24pt;
+            font-weight: 500;
+            padding: 20px 40px;
+            background: var(--brand-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            display: inline-block;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 12pt;
+            color: var(--text-dim);
+            opacity: 0.5;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 12pt;
+            color: var(--text-dim);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <section class="title-slide">
+                <h1>Satvik Jain</h1>
+                <h2>Product Growth Manager @ BrowserStack</h2>
+                <div style="margin-top: 40px; font-size: 20pt; opacity: 0.6;">2026-03-23</div>
+            </section>
+            
+
+            <section>
+                <h3>Senior PM with B2B SaaS & AI track record</h3>
+                <div class="anchor-list">
+                    <div class="anchor-item"><span class="anchor-icon">✓</span>IIT Delhi — Top 0.002% JEE Advanced (AIR-2446)</div>
+<div class="anchor-item"><span class="anchor-icon">✓</span>Sprinklr — Scaled SaaS products for 1,500+ enterprise clients</div>
+<div class="anchor-item"><span class="anchor-icon">✓</span>4+ years experience in product growth & AI delivery</div>
+                </div>
+                <div class="anchor-proof">
+                    <strong>Evidence:</strong> Ranked #33 of 400+ global teams at Amex Growth Hack 2025
+                </div>
+            </section>
+            
+
+            <section>
+                <h3>Your growth needs. My proven execution.</h3>
+                <table class="mirror-table">
+                    <thead>
+                        <tr>
+                            <th>They Need</th>
+                            <th>I've Delivered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>GTM Strategy & Revenue Growth</td><td>Executed GTM for AI-Reporting, driving 15% revenue increase in 3 months</td></tr>
+<tr><td>Channel Experimentation & Adoption</td><td>Improved platform adoption from 35% to 85% via A/B tests</td></tr>
+<tr><td>Analytical Skills & Technical Depth</td><td>Migrated AML engines to BigQuery, achieving 85% speed increase</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            
+
+            <section>
+                <h3>What I'll bring to BrowserStack</h3>
+                <div class="proof-grid">
+                    <div class="proof-card"><div class="proof-metric">85%</div><div class="proof-context">Product adoption growth — self-service onboarding for SME clients</div></div>
+<div class="proof-card"><div class="proof-metric">15%</div><div class="proof-context">Revenue increase — first 3 months of AI-Reporting automation launch</div></div>
+                </div>
+            </section>
+            
+
+            <section>
+                <h3>My 90-day growth plan</h3>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-progress"></div>
+                    
+                <div class="timeline-step">
+                    <div class="step-bubble">1–30</div>
+                    <div class="step-label">Map</div>
+                    <div class="step-action">Audit GTM channels and understand developer personas/product gaps</div>
+                </div>
+            
+
+                <div class="timeline-step">
+                    <div class="step-bubble">31–60</div>
+                    <div class="step-label">Execute</div>
+                    <div class="step-action">Run rapid channel experiments to identify 1–2 quick-win growth levers</div>
+                </div>
+            
+
+                <div class="timeline-step">
+                    <div class="step-bubble">61–90</div>
+                    <div class="step-label">Drive</div>
+                    <div class="step-action">Launch integrated GTM plan for a strategic feature to drive awareness</div>
+                </div>
+            
+                </div>
+            </section>
+            
+
+            <section>
+                <div class="cta-content">
+                    <div class="cta-name">Satvik Jain</div>
+                    <div class="cta-contact">
+                        satvik.jain@iitdalumni.com &nbsp;•&nbsp; +917678296693<br>
+                        https://linkedin.com/in/satvik-jain-iitd
+                    </div>
+                    <a href="https://satvik-jain-iitd.github.io/browserstack-product-growth-manager-20260323.html" class="cta-portfolio">View Full Portfolio</a>
+                    <div style="margin-top: 60px; color: var(--text-dim); font-size: 16pt;">
+                        Available for interviews starting March 25, 2026
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        <div class="watermark">Satvik Jain — Product Growth Manager</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            width: 1280,
+            height: 720,
+            margin: 0.05,
+            minScale: 0.2,
+            maxScale: 2.0,
+            transition: 'fade',
+            backgroundTransition: 'fade',
+            center: false,
+            slideNumber: 'c/t'
+        });
+    </script>
+</body>
+</html>
