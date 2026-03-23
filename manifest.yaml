@@ -25,3 +25,16 @@ resumes:
   recruiter_name: ''
   recruiter_email: ''
   notes: ''
+- company: Tether
+  role: Technical Product Manager
+  slug: tether-technical-product-manager-20260322
+  file: tether-technical-product-manager-20260322.html
+  url: https://satvik-jain-iitd.github.io/tether-technical-product-manager-20260322.html
+  pdf: tether-technical-product-manager-20260322.pdf
+  date_generated: '2026-03-23'
+  date_sent: null
+  kali_score: null
+  status: draft
+  recruiter_name: ''
+  recruiter_email: ''
+  notes: ''
